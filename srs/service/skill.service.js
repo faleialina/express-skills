@@ -8,11 +8,19 @@ const array = [
 
 function getAllSkills() {
   return array;
-}
+};
 
 function getAllSkillById(id) {
   const filtered = array.filter(elem => elem.id == id);
   return filtered;
-}
+};
 
-module.exports = { getAllSkills, getAllSkillById };
+function createSkill(title) {
+  array.push({
+    id: array.length + 1,
+    title: title
+  });
+  return array;
+};
+
+module.exports = { getAllSkills, getAllSkillById, createSkill };
