@@ -23,4 +23,20 @@ function createSkill(title) {
   return array;
 };
 
-module.exports = { getAllSkills, getAllSkillById, createSkill };
+function updateSkill(id, title) {
+  const filtered = array.filter(elem => elem.id != id);
+  if (filtered.length !== array.length) {
+    filtered.push({
+      id,
+      title
+    });
+    return filtered;
+  } else {
+    throw new Error('id нет');
+  };
+};
+
+
+
+
+module.exports = { getAllSkills, getAllSkillById, createSkill, updateSkill };
