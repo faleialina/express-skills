@@ -11,7 +11,7 @@ function getAllSkills() {
 };
 
 function getAllSkillById(id) {
-  const filtered = array.filter(elem => elem.id == id);
+  const filtered = array.filter((elem) => elem.id == id);
   return filtered;
 };
 
@@ -24,7 +24,7 @@ function createSkill(title) {
 };
 
 function updateSkill(id, title) {
-  const filtered = array.filter(elem => elem.id != id);
+  const filtered = array.filter((elem) => elem.id != id);
   if (filtered.length !== array.length) {
     filtered.push({
       id,
@@ -36,7 +36,9 @@ function updateSkill(id, title) {
   };
 };
 
+function deleteSkill(id) {
+  const filtered = array.filter((elem) => elem.id != id);
+  return filtered;
+};
 
-
-
-module.exports = { getAllSkills, getAllSkillById, createSkill, updateSkill };
+module.exports = { getAllSkills, getAllSkillById, createSkill, updateSkill, deleteSkill };
